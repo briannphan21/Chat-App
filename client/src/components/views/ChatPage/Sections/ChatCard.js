@@ -1,15 +1,16 @@
 import React from 'react';
-import { Comment, Tooltip, Avatar } from 'antd';
 import moment from 'moment';
+import { Comment, Tooltip, Avatar } from 'antd';
+// import {Player, ControlBar} from 'video-react'
 
-const ChatCard = props => {
+function ChatCard(props) {
   return (
     <div style={{ width: '100%' }}>
       <Comment
         author={props.sender.name}
         avatar={<Avatar src={props.sender.image} alt={props.sender.name} />}
         content={
-          props.message.substring(0, 8) === 'uploads/' ? (
+          props.message.substring(0, 7) === 'uploads' ? (
             // this will be either video or image
 
             props.message.substring(
@@ -22,6 +23,7 @@ const ChatCard = props => {
                 alt='video'
                 type='video/mp4'
                 controls
+                autoPlay
               />
             ) : (
               <img
@@ -42,6 +44,6 @@ const ChatCard = props => {
       />
     </div>
   );
-};
+}
 
 export default ChatCard;
