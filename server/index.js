@@ -16,8 +16,6 @@ const config = require('./config/key');
 //   .then(() => console.log("DB connected"))
 //   .catch(err => console.error(err));
 
-const { Chat } = require('./models/Chat');
-
 const mongoose = require('mongoose');
 const connect = mongoose
   .connect(config.mongoURI, {
@@ -39,7 +37,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(cookieParser());
 
+const { Chat } = require('./models/Chat');
+
 app.use('/api/users', require('./routes/users'));
+app.use('/api/chat', require('./routes/chat'));
 
 io.on('connection', socket => {
   socket.on('Input Chat Message', msg => {
