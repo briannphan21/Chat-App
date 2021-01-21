@@ -28,7 +28,7 @@
     "react-dropzone": "^10.2.1",
     "react-redux": "^5.0.7",
     "saslprep": "^1.0.3",
-    "socket.io": "^2.3.0",
+    "socket.io": "^2.4.0",
     "video-react": "^0.14.1"
   },
   "devDependencies": {
